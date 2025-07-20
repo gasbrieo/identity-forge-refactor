@@ -22,6 +22,14 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		..\.github\workflows\backend-build.yml = ..\.github\workflows\backend-build.yml
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityForge.Domain.UnitTests", "tests\IdentityForge.Domain.UnitTests\IdentityForge.Domain.UnitTests.csproj", "{1C62F130-1AC1-42B5-A3E2-18FD30BC1691}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityForge.Application.UnitTests", "tests\IdentityForge.Application.UnitTests\IdentityForge.Application.UnitTests.csproj", "{5EE9E60B-CD85-455F-B004-1FF60E620D91}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityForge.Infrastructure.IntegrationTests", "tests\IdentityForge.Infrastructure.IntegrationTests\IdentityForge.Infrastructure.IntegrationTests.csproj", "{3F18AE97-9236-4717-B9B5-0EDB637996F4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityForge.Web.AcceptanceTests", "tests\IdentityForge.Web.AcceptanceTests\IdentityForge.Web.AcceptanceTests.csproj", "{31E2F48F-853C-4772-9B60-0F7AAC8C3CFD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -44,6 +52,22 @@ Global
 		{73BDEF7E-FE69-4FCC-8EFD-8775E46DFF89}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{73BDEF7E-FE69-4FCC-8EFD-8775E46DFF89}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{73BDEF7E-FE69-4FCC-8EFD-8775E46DFF89}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1C62F130-1AC1-42B5-A3E2-18FD30BC1691}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C62F130-1AC1-42B5-A3E2-18FD30BC1691}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C62F130-1AC1-42B5-A3E2-18FD30BC1691}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C62F130-1AC1-42B5-A3E2-18FD30BC1691}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5EE9E60B-CD85-455F-B004-1FF60E620D91}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5EE9E60B-CD85-455F-B004-1FF60E620D91}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5EE9E60B-CD85-455F-B004-1FF60E620D91}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5EE9E60B-CD85-455F-B004-1FF60E620D91}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3F18AE97-9236-4717-B9B5-0EDB637996F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F18AE97-9236-4717-B9B5-0EDB637996F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F18AE97-9236-4717-B9B5-0EDB637996F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F18AE97-9236-4717-B9B5-0EDB637996F4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{31E2F48F-853C-4772-9B60-0F7AAC8C3CFD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{31E2F48F-853C-4772-9B60-0F7AAC8C3CFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{31E2F48F-853C-4772-9B60-0F7AAC8C3CFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{31E2F48F-853C-4772-9B60-0F7AAC8C3CFD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -53,6 +77,10 @@ Global
 		{37A23D88-B8A8-4AE0-8BF9-C0052A541050} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 		{F9E50C0F-758F-4ED2-B102-8A8FF4703358} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 		{73BDEF7E-FE69-4FCC-8EFD-8775E46DFF89} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{1C62F130-1AC1-42B5-A3E2-18FD30BC1691} = {9D954FA8-E150-4BDF-B14C-B854F43BF039}
+		{5EE9E60B-CD85-455F-B004-1FF60E620D91} = {9D954FA8-E150-4BDF-B14C-B854F43BF039}
+		{3F18AE97-9236-4717-B9B5-0EDB637996F4} = {9D954FA8-E150-4BDF-B14C-B854F43BF039}
+		{31E2F48F-853C-4772-9B60-0F7AAC8C3CFD} = {9D954FA8-E150-4BDF-B14C-B854F43BF039}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B74EC260-DDDA-434C-ADFE-3534627D6CA0}
