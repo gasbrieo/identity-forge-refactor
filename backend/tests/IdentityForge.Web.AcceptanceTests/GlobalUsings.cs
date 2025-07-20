@@ -1,1 +1,12 @@
-﻿
+global using System.Data;
+global using System.Data.Common;
+global using System.Net;
+global using Microsoft.AspNetCore.Hosting;
+global using Microsoft.AspNetCore.Mvc.Testing;
+global using Microsoft.AspNetCore.TestHost;
+global using Microsoft.Data.Sqlite;
+global using Microsoft.EntityFrameworkCore;
+global using Microsoft.Extensions.DependencyInjection;
+global using Microsoft.Extensions.DependencyInjection.Extensions;
+global using Npgsql;
+global using Testcontainers.PostgreSql;
