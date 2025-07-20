@@ -1,0 +1,62 @@
+name: Frontend Build
+
+on:
+  workflow_dispatch:
+  push:
+    branches: ["main"]
+    paths: ["frontend/**"]
+  pull_request:
+    types: [opened, synchronize, reopened]
+    paths: ["frontend/**"]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: ./frontend
+
+    permissions:
+      pull-requests: write
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 23.x
+
+      - name: Install SonarScanner
+        run: |
+          npm install -g sonarqube-scanner
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run Prettier
+        run: npm run prettier
+
+      - name: Run ESLint
+        run: npm run lint
+
+      - name: Run Build
+        run: npm run build
+
+      - name: Run Tests
+        run: npm run test:coverage
+
+      - name: Run SonarQube Scan
+        run: |
+          sonar-scanner \
+            -Dsonar.projectKey=gasbrieo_identity-forge_frontend \
+            -Dsonar.projectName=identity-forge_frontend \
+            -Dsonar.organization=gasbrieo \
+            -Dsonar.host.url=https://sonarcloud.io \
+            -Dsonar.token=${{ secrets.FRONTEND_SONAR_TOKEN }} \
+            -Dsonar.javascript.lcov.reportPaths=coverage/lcov.info \
+            -Dsonar.exclusions=**/*.test.ts,**/*.test.tsx,
