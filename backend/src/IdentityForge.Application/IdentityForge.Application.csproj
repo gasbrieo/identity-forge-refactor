@@ -10,4 +10,13 @@
     <ProjectReference Include="..\IdentityForge.Domain\IdentityForge.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Queries\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="12.0.0" />
+    <PackageReference Include="Scrutor" Version="6.1.0" />
+  </ItemGroup>
+
 </Project>

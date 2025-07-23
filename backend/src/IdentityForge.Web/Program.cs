@@ -2,6 +2,7 @@ using IdentityForge.Application;
 using IdentityForge.Infrastructure;
 using IdentityForge.Infrastructure.Persistence;
 using IdentityForge.Web;
+using IdentityForge.Web.Endpoints.V1;
 using IdentityForge.Web.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -21,7 +22,7 @@ builder.Services.AddEndpoints(Assembly.GetExecutingAssembly());
 
 var app = builder.Build();
 
-app.MapEndpoints();
+app.MapEndpoints<IEndpointV1>(new(1, 0));
 
 if (app.Environment.IsDevelopment())
 {
@@ -43,5 +44,8 @@ app.UseExceptionHandler();
 
 app.UseSpaCors();
 
-await app.RunAsync();
+app.UseAuthentication();
 
+app.UseAuthorization();
+
+await app.RunAsync();

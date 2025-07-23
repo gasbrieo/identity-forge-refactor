@@ -1,6 +1,6 @@
 using IdentityForge.Infrastructure.Persistence;
 
-namespace IdentityForge.Web.AcceptanceTests.TestHelpers.Persistence.Databases;
+namespace IdentityForge.Web.AcceptanceTests.TestHelpers.Databases;
 
 public class PostgresTestDatabase : ITestDatabase
 {

@@ -1,7 +1,15 @@
-﻿namespace IdentityForge.Infrastructure.Persistence;
+using IdentityForge.Domain.Entities;
+using IdentityForge.Infrastructure.Options;
 
-public class AppDbContextInitialiser(ILogger<AppDbContextInitialiser> logger, AppDbContext context)
+namespace IdentityForge.Infrastructure.Persistence;
+
+public class AppDbContextInitialiser(
+    ILogger<AppDbContextInitialiser> logger,
+    IOptions<AdminUserOptions> adminUserOptions,
+    AppDbContext context)
 {
+    private readonly AdminUserOptions _adminUserOptions = adminUserOptions.Value;
+
     public async Task InitialiseAsync()
     {
         try
@@ -28,8 +36,35 @@ public class AppDbContextInitialiser(ILogger<AppDbContextInitialiser> logger, Ap
         }
     }
 
-    public static Task TrySeedAsync()
+    public async Task TrySeedAsync()
     {
-        return Task.CompletedTask;
+        var adminRole = context.Roles
+            .Include(r => r.Permissions)
+            .FirstOrDefault(r => r.Name == _adminUserOptions.Role);
+
+        if (adminRole is null)
+        {
+            adminRole = new Role(_adminUserOptions.Role);
+            await context.Roles.AddAsync(adminRole);
+        }
+
+        foreach (var permission in context.Permissions.ToList())
+        {
+            adminRole.AssignPermission(permission);
+        }
+
+        var adminUser = context.Users
+            .Include(u => u.Roles)
+            .FirstOrDefault(u => u.Email == _adminUserOptions.Email);
+
+        if (adminUser is null)
+        {
+            adminUser = new User(_adminUserOptions.Email);
+            await context.Users.AddAsync(adminUser);
+        }
+
+        adminUser.AssignRole(adminRole);
+
+        await context.SaveChangesAsync();
     }
 }

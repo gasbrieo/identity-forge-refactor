@@ -1,6 +1,4 @@
-using IdentityForge.Web.AcceptanceTests.TestHelpers.Persistence.Databases;
-
-namespace IdentityForge.Web.AcceptanceTests.TestHelpers.Persistence;
+namespace IdentityForge.Web.AcceptanceTests.TestHelpers.Databases;
 
 public static class TestDatabaseFactory
 {

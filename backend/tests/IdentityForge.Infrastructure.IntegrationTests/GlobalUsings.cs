@@ -5,5 +5,6 @@ global using Microsoft.EntityFrameworkCore;
 global using Microsoft.Extensions.DependencyInjection;
 global using Microsoft.Extensions.DependencyInjection.Extensions;
 global using Microsoft.Extensions.Hosting;
+global using Microsoft.Extensions.Options;
 global using Npgsql;
 global using Testcontainers.PostgreSql;

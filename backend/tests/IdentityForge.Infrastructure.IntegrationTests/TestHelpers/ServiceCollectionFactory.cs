@@ -1,4 +1,5 @@
 using IdentityForge.Infrastructure.Persistence;
+using Microsoft.Extensions.Configuration;
 
 namespace IdentityForge.Infrastructure.IntegrationTests.TestHelpers;
 
@@ -9,6 +10,14 @@ public class ServiceCollectionFactory
     public ServiceCollectionFactory(DbConnection connection)
     {
         var builder = new HostApplicationBuilder();
+
+        builder.Configuration.AddInMemoryCollection(new Dictionary<string, string?>
+        {
+            ["AdminUser:Email"] = "admin@identityforge.com",
+            ["AdminUser:Role"] = "Admin",
+        });
+
+        builder.Services.AddInfrastructure(builder.Configuration);
 
         builder.Services
             .RemoveAll<DbContextOptions<AppDbContext>>()
@@ -22,8 +31,6 @@ public class ServiceCollectionFactory
                     throw new NotSupportedException("Unsupported DB connection type");
 
             });
-
-        builder.Services.AddScoped<AppDbContextInitialiser>();
 
         Services = builder.Services.BuildServiceProvider();
     }

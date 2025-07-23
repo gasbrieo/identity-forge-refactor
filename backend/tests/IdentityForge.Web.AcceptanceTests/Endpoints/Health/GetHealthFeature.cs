@@ -1,8 +1,8 @@
 using IdentityForge.Web.AcceptanceTests.TestHelpers;
 
-namespace IdentityForge.Web.AcceptanceTests.Features.Health;
+namespace IdentityForge.Web.AcceptanceTests.Endpoints.Health;
 
-[Collection("TestCollection")]
+[Collection(nameof(TestCollection))]
 public class GetHealthFeature(TestFixture fixture) : TestBase(fixture)
 {
     private readonly GetHealthSteps _steps = new(fixture);

@@ -1,9 +1,8 @@
 using IdentityForge.Web.AcceptanceTests.Steps;
 using IdentityForge.Web.AcceptanceTests.TestHelpers;
 
-namespace IdentityForge.Web.AcceptanceTests.Features.Health;
+namespace IdentityForge.Web.AcceptanceTests.Endpoints.Health;
 
-[Collection(nameof(TestCollection))]
 public class GetHealthSteps(TestFixture fixture) : CommonStepsBase(fixture)
 {
     public async Task WhenTheyAttemptToChecksHealth()

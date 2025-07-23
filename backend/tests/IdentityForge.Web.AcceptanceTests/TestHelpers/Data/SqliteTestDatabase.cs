@@ -1,7 +1,6 @@
 using IdentityForge.Infrastructure.Persistence;
-using IdentityForge.Web.AcceptanceTests.TestHelpers.Persistence;
 
-namespace IdentityForge.Web.AcceptanceTests.TestHelpers.Persistence.Databases;
+namespace IdentityForge.Web.AcceptanceTests.TestHelpers.Databases;
 
 public class SqliteTestDatabase : ITestDatabase
 {

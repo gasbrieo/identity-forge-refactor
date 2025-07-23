@@ -1,5 +1,5 @@
 using IdentityForge.Infrastructure.Persistence;
-using IdentityForge.Web.AcceptanceTests.TestHelpers.Persistence;
+using IdentityForge.Web.AcceptanceTests.TestHelpers.Databases;
 
 namespace IdentityForge.Web.AcceptanceTests.TestHelpers;
 
