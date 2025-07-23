@@ -53,10 +53,10 @@ public static class DependencyInjection
 
         services.AddAuthorization(options =>
         {
-            foreach (var permission in PermissionCatalog.All)
+            foreach (var permissionCode in PermissionCatalog.All.Select(p => p.Code))
             {
-                options.AddPolicy(permission.Code, policy =>
-                    policy.RequireClaim("permission", permission.Code));
+                options.AddPolicy(permissionCode, policy =>
+                    policy.RequireClaim("permission", permissionCode));
             }
         });
 

@@ -38,9 +38,9 @@ public class AppDbContextInitialiser(
 
     public async Task TrySeedAsync()
     {
-        var adminRole = context.Roles
+        var adminRole = await context.Roles
             .Include(r => r.Permissions)
-            .FirstOrDefault(r => r.Name == _adminUserOptions.Role);
+            .FirstOrDefaultAsync(r => r.Name == _adminUserOptions.Role);
 
         if (adminRole is null)
         {
@@ -48,14 +48,14 @@ public class AppDbContextInitialiser(
             await context.Roles.AddAsync(adminRole);
         }
 
-        foreach (var permission in context.Permissions.ToList())
+        foreach (var permission in await context.Permissions.ToListAsync())
         {
             adminRole.AssignPermission(permission);
         }
 
-        var adminUser = context.Users
+        var adminUser = await context.Users
             .Include(u => u.Roles)
-            .FirstOrDefault(u => u.Email == _adminUserOptions.Email);
+            .FirstOrDefaultAsync(u => u.Email == _adminUserOptions.Email);
 
         if (adminUser is null)
         {
