@@ -6,6 +6,8 @@ public class CustomWebApplicationFactory(DbConnection connection) : WebApplicati
 {
     protected override void ConfigureWebHost(IWebHostBuilder builder)
     {
+        builder.UseSetting("Jwt:Secret", Guid.NewGuid().ToString());
+
         builder.ConfigureTestServices(services =>
         {
             services

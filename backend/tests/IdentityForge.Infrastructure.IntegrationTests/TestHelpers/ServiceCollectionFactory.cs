@@ -1,5 +1,4 @@
 using IdentityForge.Infrastructure.Persistence;
-using Microsoft.Extensions.Configuration;
 
 namespace IdentityForge.Infrastructure.IntegrationTests.TestHelpers;
 

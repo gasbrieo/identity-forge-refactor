@@ -1,7 +1,4 @@
-using CleanArch;
 using IdentityForge.Web.AcceptanceTests.TestHelpers;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
 
 namespace IdentityForge.Web.AcceptanceTests.Steps;
 
