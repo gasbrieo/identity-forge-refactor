@@ -61,16 +61,12 @@ Then follow the instructions in:
 
 ## 🔄 Releases & Versioning
 
-This project uses **[semantic-release](https://semantic-release.gitbook.io/semantic-release/)** for fully automated versioning:
-
-- **feat:** → minor version bump (0.x.0 → 0.(x+1).0)
-- **fix:** → patch version bump (0.0.x → 0.0.(x+1))
-- **feat!: / BREAKING CHANGE:** → major version bump (x.0.0 → (x+1).0.0)
-
-Every merge into `main` automatically:
-
+This backend uses **semantic-release** for automated versioning and release management.  
+Every merge into `main`:
 - Updates `CHANGELOG.md`
 - Creates a GitHub release
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for details on commit conventions and contributing
 
 ---
 
