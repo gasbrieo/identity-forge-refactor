@@ -1,8 +1,8 @@
-using IdentityForge.Infrastructure.IntegrationTests.TestHelpers.Persistence;
+using IdentityForge.Infrastructure.IntegrationTests.TestHelpers.Persistence.Data;
 
-namespace IdentityForge.Infrastructure.IntegrationTests.TestHelpers;
+namespace IdentityForge.Infrastructure.IntegrationTests.TestHelpers.Persistence;
 
-public class TestFixture : IAsyncLifetime
+public class PersistenceTestFixture : IAsyncLifetime
 {
     private ITestDatabase _database = null!;
     private ServiceCollectionFactory _factory = null!;
@@ -28,3 +28,4 @@ public class TestFixture : IAsyncLifetime
         await _database.DisposeAsync();
     }
 }
+

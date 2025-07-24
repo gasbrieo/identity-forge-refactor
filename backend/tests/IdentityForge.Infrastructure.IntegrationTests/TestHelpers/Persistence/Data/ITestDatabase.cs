@@ -1,4 +1,4 @@
-namespace IdentityForge.Infrastructure.IntegrationTests.TestHelpers.Persistence;
+namespace IdentityForge.Infrastructure.IntegrationTests.TestHelpers.Persistence.Data;
 
 public interface ITestDatabase
 {

@@ -1,11 +1,11 @@
 using IdentityForge.Domain.Entities;
 using IdentityForge.Domain.Interfaces;
-using IdentityForge.Infrastructure.IntegrationTests.TestHelpers;
+using IdentityForge.Infrastructure.IntegrationTests.TestHelpers.Persistence;
 
 namespace IdentityForge.Infrastructure.IntegrationTests.Persistence.Repositories;
 
-[Collection(nameof(TestCollection))]
-public class UserRepositoryTests(TestFixture fixture) : TestBase(fixture)
+[Collection(nameof(PersistenceTestCollection))]
+public class UserRepositoryTests(PersistenceTestFixture fixture) : PersistenceTestBase(fixture)
 {
     private readonly IUserRepository _repository =
         fixture.GetRequiredService<IUserRepository>();

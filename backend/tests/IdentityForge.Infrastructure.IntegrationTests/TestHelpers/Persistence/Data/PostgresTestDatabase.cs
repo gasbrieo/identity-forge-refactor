@@ -1,6 +1,6 @@
 using IdentityForge.Infrastructure.Persistence;
 
-namespace IdentityForge.Infrastructure.IntegrationTests.TestHelpers.Persistence.Databases;
+namespace IdentityForge.Infrastructure.IntegrationTests.TestHelpers.Persistence.Data;
 
 public class PostgresTestDatabase : ITestDatabase
 {

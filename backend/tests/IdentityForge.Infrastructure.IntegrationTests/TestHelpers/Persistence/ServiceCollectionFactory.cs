@@ -1,6 +1,6 @@
 using IdentityForge.Infrastructure.Persistence;
 
-namespace IdentityForge.Infrastructure.IntegrationTests.TestHelpers;
+namespace IdentityForge.Infrastructure.IntegrationTests.TestHelpers.Persistence;
 
 public class ServiceCollectionFactory
 {

@@ -1,11 +1,11 @@
-using IdentityForge.Infrastructure.IntegrationTests.TestHelpers;
+using IdentityForge.Infrastructure.IntegrationTests.TestHelpers.Persistence;
 using IdentityForge.Infrastructure.Options;
 using IdentityForge.Infrastructure.Persistence;
 
 namespace IdentityForge.Infrastructure.IntegrationTests.Persistence;
 
-[Collection(nameof(TestCollection))]
-public class AppDbContextInitialiserTests(TestFixture fixture) : TestBase(fixture)
+[Collection(nameof(PersistenceTestCollection))]
+public class AppDbContextInitialiserTests(PersistenceTestFixture fixture) : PersistenceTestBase(fixture)
 {
     private readonly AppDbContext _context =
         fixture.GetRequiredService<AppDbContext>();

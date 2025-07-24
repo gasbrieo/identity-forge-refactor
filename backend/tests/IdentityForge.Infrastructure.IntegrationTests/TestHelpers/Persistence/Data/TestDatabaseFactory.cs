@@ -1,6 +1,4 @@
-using IdentityForge.Infrastructure.IntegrationTests.TestHelpers.Persistence.Databases;
-
-namespace IdentityForge.Infrastructure.IntegrationTests.TestHelpers.Persistence;
+namespace IdentityForge.Infrastructure.IntegrationTests.TestHelpers.Persistence.Data;
 
 public static class TestDatabaseFactory
 {
